@@ -19,7 +19,7 @@ for (i in 1:length(url.list)){
   images <- html_attr(html_nodes(webpage,"div.nfl-o-ranked-item__image > figure > picture > img"),"data-src") #Get ordered list of logos
   df <- data.frame(trimws(html_text(teams))) #Initialize df with list of teams in the first column
   df[,2]<-paste0("Week",i) #Set the second column of df to the week number
-  df[,3] <- 1:32 #Rank the teams in the third column
+  df[,3] <- 1:length(html_text(teams)) #Rank the teams in the third column
   df[,4] <- images #Set the fourth column to the image source
   names(df)<- c("Team","Week","Rank","Image") #Rename the columns of df
   #If it is the first iteration, initialize final.df with df, else append df to final.df
