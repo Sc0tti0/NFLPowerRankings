@@ -2,7 +2,7 @@ library(rvest)
 library(ggplot2)
 library(ggimage)
 
-#Use week 1 URL to intialize the list of teams and rankings
+#Use week 1 URL to initialize the list of teams and rankings
 url <- paste0("https://www.nfl.com/news/nfl-power-rankings-week-1-buccaneers-chiefs-begin-2021-season-on-top")
 webpage<- read_html(url)
 teams<-html_nodes(webpage,"#main-content > article > div:nth-child(3) > div > div:nth-child(2) > section")
